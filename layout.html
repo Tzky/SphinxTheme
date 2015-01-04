@@ -1,0 +1,47 @@
+{%- extends "basic/layout.html" %}
+
+{% set css_files = css_files + ['http://fonts.googleapis.com/css?family=Open+Sans:400,600|Roboto:300,400italic,700italic,700,400'] %}
+
+{% set sidebars = ["searchbox.html", "globaltoc.html", "sourcelink.html"] %}
+
+{% if theme_collapsiblesidebar|tobool %}
+{% set script_files = script_files + ['_static/sidebar.js'] %}
+{% endif %}
+
+{%- block header %}
+<div class="header">
+  <div class="container">
+    <a href="http://forum.sk89q.com" class="btn btn-default navbar-btn navbar-right">Ask questions on our forums</a>
+    <a href="http://www.enginehub.org/" class="brand">EngineHub.org</a>
+    <div class="nav">
+      <li><a href="http://www.enginehub.org/">See our projects</a></li>
+      <li class="active"><a href="#">Docs</a></li>
+      <li><a href="http://forum.enginehub.org">Forums</a></li>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{%- block sidebar2 %}
+
+{%- if render_sidebar %}
+<div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+  <div class="sphinxsidebarwrapper">
+    {%- block sidebarlogo %}
+    {%- if logo %}
+    <p class="logo"><a href="{{ pathto(master_doc) }}">
+    <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+    </a></p>
+    {%- endif %}
+    {%- endblock %}
+    {%- for sidebartemplate in sidebars %}
+    {%- include sidebartemplate %}
+    {%- endfor %}
+  </div>
+
+  <div class="sponsorbox">
+    {%- include "sponsor.html" %}
+  </div>
+</div>
+{%- endif %}
+{% endblock %}
