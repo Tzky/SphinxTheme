@@ -305,6 +305,10 @@ div.footer a:hover {
   color: #229;
 }
 
+.reference em {
+    font-style: normal;
+}
+
 table {
   width: 100%;
 }
