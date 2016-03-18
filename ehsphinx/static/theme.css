@@ -1,19 +1,29 @@
-@import url("default.css");
-
 body {
   background-color: white;
   margin-left: 1em;
   margin-right: 1em;
   font-size: 14px;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
 }
 
 div.document, div.related, .container {
   max-width: 1000px;
   margin: auto;
+  overflow: hidden;
 }
 
 div.document {
   margin-bottom: 20px;
+}
+
+div.documentwrapper {
+  float: right;
+  width: 72%;
+  padding: 0 1%;
 }
 
 div.body p, div.body dd, div.body li {
@@ -29,8 +39,21 @@ div.related {
 }
 
 div.related ul {
-  padding: 0;
+  padding: 10px 0;
 }
+
+div.related ul li {
+  display: inline-block;
+}
+
+.right {
+  float: right;
+}
+
+.nav-item {
+  float: left;
+}
+
 
 div.related a:hover {
   color: #0095C4;
@@ -44,6 +67,8 @@ div.related:first-child, .header + div.related {
 div.sphinxsidebar {
   line-height: 130%;
   font-size: 100%;
+  float: right;
+  width: 26%;
 }
 
 div.sphinxsidebar h3, div.sphinxsidebar h4 {
@@ -85,8 +110,9 @@ div.sphinxsidebar div > ul {
 }
 
 div.sphinxsidebar ul, div.sphinxsidebar ul ul, div.sphinxsidebar ul.want-points {
-  margin: 0 0 0 15px;
+  margin: 0 0 0 10px;
   list-style: none;
+  padding: 0;
 }
 
 div.sphinxsidebar li {
@@ -138,6 +164,10 @@ div.sphinxsidebar li.current > a:before {
   border-left-color: transparent;
   border-width: 3px 3px;
   margin-right: 5px;
+}
+
+.headerlink {
+  display: none;
 }
 
 div.body {
@@ -287,10 +317,9 @@ table.footnote, table.footnote td {
 
 div.footer {
   line-height: 150%;
-  margin-top: -2em;
-  text-align: right;
-  width: auto;
-  margin-right: 10px;
+  text-align: left;
+  max-width: 1000px;
+  margin: -2em auto 0;
 }
 
 div.footer a:hover {
@@ -315,7 +344,7 @@ table {
 
 .header {
   background: linear-gradient(to bottom, #f4f4f4 0%,#f4f4f4 72%,#e8e8e8 100%);
-  margin: 0 -14px;
+  margin: -14px;
   font-size: 18px;
   height: 50px;
   border-bottom: 1px solid #4D3672;
