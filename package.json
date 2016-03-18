@@ -1,0 +1,8 @@
+{
+  "name": "ehsphinx-theme",
+  "version": "0.0.1",
+  "description": "EngineHub Sphinx Theme",
+  "private": true,
+  "author": "EngineHub Team",
+  "license": "MIT"
+}
